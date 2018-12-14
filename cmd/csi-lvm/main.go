@@ -29,6 +29,7 @@ var (
   driverName = flag.String("drivername", "csi-lvm", "name of the driver")
   nodeID     = flag.String("nodeid", "", "node id")
   volumeGroup = flag.String("volume-group", "default", "lvm volume group")
+  lvmdEndpoint = flag.String("lvmd-endpoint", "127.0.0.1:1736", "lvmd endpoint")
 )
 
 func main() {
