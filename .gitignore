@@ -1,0 +1,5 @@
+vendor/*
+_output
+_output/*
+.idea
+.idea/*

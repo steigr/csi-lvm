@@ -7,3 +7,6 @@ REV=$(shell git describe --long --tags --dirty)
 csi-lvm:
 	if [ ! -d ./vendor ]; then dep ensure -vendor-only; fi
 	CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-X github.com/steigr/csi-lvm/pkg/lvm.vendorVersion=$(REV) -extldflags "-static"' -o _output/lvmplugin ./cmd/csi-lvm
+
+csi-lvm-container:
+	docker build -t $(IMAGE_TAG) -f ./cmd/csi-lvm/Dockerfile .
